@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Asul', sans-serif;
+    font-weight: bold;
+    color: #F3EFE0;
+  }
+  .nav {
+    /* background-color:  #222222; */
+  }
+  #navbarSupportContent {
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'Rubik Vinyl', cursive;
+    color: #CF0A0A;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  .text-focus-in{animation:text-focus-in 1s cubic-bezier(.55,.085,.68,.53) both}
+  @keyframes text-focus-in{0%{filter:blur(12px);opacity:0}100%{filter:blur(0);opacity:1}}
+  .nav-link {
+    font-size: 25px;
+    color: #F3EFE0;
+  }
+  .nav-link:hover {
+    color: #CF0A0A;
+  }
+  .log {
+    text-decoration: underline 5px;
+    font-size: 25px;
+  }
+  .log:hover {
+    color: #CF0A0A;
+  }

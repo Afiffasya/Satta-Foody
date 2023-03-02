@@ -1,0 +1,8 @@
+.fom {
+    background: #fff;
+    height: 400px;
+    margin: auto;
+    border: 1px solid black;
+    position: relative;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
