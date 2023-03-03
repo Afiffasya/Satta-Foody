@@ -153,7 +153,7 @@ const FoodList = () => {
               return (
                 <React.Fragment key={r.id}>
                   <div className="card-group gy-0">
-                    <div className="card mh-100 shadows mt-4 tp">
+                    <div className="card mh-100 shadow mt-4 tp">
                       <img
                         src={r.imageUrl}
                         className="card-img-top mx-auto card-image"
@@ -246,7 +246,7 @@ const FoodList = () => {
                             })}
                             onSubmit={handleUpdate}
                           >
-                            <Form>
+                            <Form className="fomfood">
                               <InputText
                                 label="Name"
                                 name="name"

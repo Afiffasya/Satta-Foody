@@ -212,11 +212,11 @@ const Register = () => {
                   className="btn btn-success fs-12px"
                 />
               </div>
-              <p className="fw-bold text-center">
+              <p className="fw-bold text-center tx">
                 Already have an account?
                 <span className="ms-1">
                   <Link
-                    className="text-decoration-none text-success"
+                    className="text-decoration-none tex"
                     to="/login"
                   >
                     back to login

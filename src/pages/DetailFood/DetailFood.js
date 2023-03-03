@@ -100,7 +100,7 @@ const Detail = () => {
             {food && food.name} details
           </h1>
           <div className="card my-3 shadow">
-            <div className="card-body">
+            <div className="card-body tx">
               <div className="row g-2">
                 <div className="col-lg-4 col-md-4 col-sm-4">
                   <img
@@ -178,7 +178,7 @@ const Detail = () => {
                   data-bs-target={`#rating${food && food.id}`}
                 >
                   <i className="ri-award-line me-2"></i>
-                  Rate this dish
+                  Rate this this
                 </button>
               </div>
 

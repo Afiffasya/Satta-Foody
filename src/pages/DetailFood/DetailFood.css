@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Spline Sans', sans-serif;
   }
   
   .img-food {
@@ -20,6 +19,8 @@
   
   .food-detail, .list-review, .text-review {
     max-width: 600px;
+    background-color: #222222;
+    color: black;
   }
   
   .card-footer .card-footer-text {

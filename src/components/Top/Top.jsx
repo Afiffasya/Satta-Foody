@@ -45,7 +45,7 @@ const Top = () => {
               .map((r) => {
                 return (
                   <Col xs={12} sm={6} md={6} lg={3} key={r.id}>
-                    <Card className="d-flex justify-content-center tp" fluid>
+                    <Card className="tp" fluid>
                       <Card.Img variant="top" className="pic" src={r.imageUrl} alt={r.name} />
                       <Card.Body>
                         <Card.Title className="text-center">{r.name}</Card.Title>

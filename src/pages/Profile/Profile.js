@@ -9,7 +9,6 @@ import defaultImage from "../../assets/img/default.webp";
 const Profile = () => {
   const [profile, setProfile] = useState();
   const [uploadImage, setUploadImage] = useState("");
-  // const {value, setValue} = useState();
 
   const onImageError = (e) => {
     e.target.src = defaultImage;
@@ -64,23 +63,6 @@ const Profile = () => {
         console.log(error);
       });
   };
-
-  // const formik = useFormik({
-  //   initialValues: {
-  //     name: profile && profile.name,
-  //     email: profile && profile.email,
-  //     phoneNumber: profile && profile.phoneNumber,
-  //     profilePictureUrl: profile && profile.profilePictureUrl,
-  //   },
-  //   enableReinitialize: true,
-  //   validationSchema: Yup.object({
-  //     name: Yup.string().required("Required"),
-  //     email: Yup.string().email("Invalid Email address").required("Required"),
-  //     phoneNumber: Yup.string()
-  //       .matches(/^[0-9]{10,12}$/, "Must be in digit")
-  //       .required("Required"),
-  //   }),
-  // });
   const formik = useFormik({
     initialValues: {
       name: profile ? profile.name : '',

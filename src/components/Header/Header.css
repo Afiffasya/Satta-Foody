@@ -5,11 +5,11 @@
     font-weight: bold;
     color: #F3EFE0;
   }
-  .nav {
-    /* background-color:  #222222; */
-  }
   #navbarSupportContent {
     justify-content: space-between;
+  }
+  #togle {
+    background-color: #CF0A0A;
   }
   .logo {
     font-family: 'Rubik Vinyl', cursive;

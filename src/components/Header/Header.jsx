@@ -50,7 +50,7 @@ const Header = () => {
     <>
       <Navbar className="nav" expand="lg" sticky="top">
         <div className="container-fluid px-lg-5">
-          <Navbar.Toggle aria-controls="navbarSupportContent" />
+          <Navbar.Toggle aria-controls="navbarSupportContent" id="togle" />
           <Navbar.Collapse id="navbarSupportContent">
             <Nav className="link">
               <Nav.Link as={Link} to="/">

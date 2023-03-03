@@ -144,7 +144,7 @@ const Login = () => {
             className="btn btn-success w-100"
           />
         </div>
-        <p className="fw-bold text-center">
+        <p className="fw-bold text-center tx">
           Not Registered Yet?
           <span className="ms-1">
             <Link className="text-decoration-none text-successs" to="/register">
