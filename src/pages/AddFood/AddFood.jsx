@@ -68,7 +68,7 @@ const AddFood = () => {
           })}
           onSubmit={onSubmit}
         >
-          <div className="card mx-auto shadows py-3 px-2">
+          <div className="card mx-auto shadows py-3 px-2 tp">
             <div className="card-body">
               <h2 className="title text-center mb-4">Add Food</h2>
               <Form>

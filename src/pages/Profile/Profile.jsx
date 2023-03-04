@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import "../Profile/Profile.css";
 import ImageForm from "../../components/ImageForm/ImageForm";
 import defaultImage from "../../assets/img/default.webp";
+import { Button, Card, Container, Row } from "react-bootstrap";
 
 const Profile = () => {
   const [profile, setProfile] = useState();
@@ -83,56 +84,55 @@ const Profile = () => {
 
   return (
     <>
-      <section className="container-fluid py-5">
+      <Container fluid className="py-5">
         <div className="mx-auto profile-detail">
           <h1 className="title text-center">My Profile</h1>
-          <div className="card my-3">
-            <div className="card-body">
-              <div className="row g-2">
-                <div className="col-lg-4 col-md-4 col-sm-4 d-flex justify-content-center">
-                  <img
+          <Card className="my-3">
+            <Card.Body className="card-body">
+              <Row className="g-2">
+                <Card.Img
+                  
                     src={profile && profile.profilePictureUrl ? profile && profile.profilePictureUrl : defaultImage}
-                    className="img-fluid m-0 img-profile-page"
+                    className="img-fluid m-0 img-profile-page col-lg-4 col-md-4 col-sm-4 d-flex justify-content-center"
                     alt={profile && profile.name}
                     onError={onImageError}
                   />
-                </div>
                 <div className="col-lg-8 col-md-8 col-sm-8">
-                  <h2 className="card-title text-center text-sm-start fs-4 mb-3">
+                  <Card.Title className="text-center text-sm-start fs-4 mb-3">
                     {profile && profile.name}
-                  </h2>
+                  </Card.Title>
                   <div className="d-flex gap-2 mb-1 d-flex align-items-center">
                     <i className="ri-mail-fill fs-5"></i>
-                    <p className="card-text">{profile && profile.email}</p>
+                    <Card.Text>{profile && profile.email}</Card.Text>
                   </div>
                   <div className="d-flex gap-2 mb-1 align-items-center">
                     <i className="ri-phone-fill fs-5"></i>
-                    <p className="card-text">
+                    <Card.Text>
                       {profile && profile.phoneNumber}
-                    </p>
+                    </Card.Text>
                   </div>
                   <div className="d-flex gap-2 mb-1 align-items-center">
                     <i className="ri-account-circle-fill fs-5"></i>
-                    <p className="card-text text-capitalize">
+                    <Card.Text className="text-capitalize">
                       {profile && profile.role} account
-                    </p>
+                    </Card.Text>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="card-footer ">
+              </Row>
+            </Card.Body>
+            <Card.Footer>
               <div className="d-flex justify-content-end align-items-center">
-                <button
+                <Button
                   type="button"
                   className="btn text-light btn-success shadow d-flex align-items-center py-1"
                   data-bs-toggle="modal"
                   data-bs-target="#exampleModal"
                 >
                   Edit Profile
-                </button>
+                </Button>
               </div>
-            </div>
-          </div>
+            </Card.Footer>
+          </Card>
 
           <div
             className="modal fade"
@@ -241,12 +241,12 @@ const Profile = () => {
                     <ImageForm onChange={(value) => setUploadImage(value)} />
 
                     <div className="text-start mt-3">
-                      <button
+                      <Button
                         type="submit"
                         className="btn text-light shadow btn-success"
                       >
                         Save
-                      </button>
+                      </Button>
                     </div>
                   </form>
                 </div>
@@ -254,7 +254,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </section>
+      </Container>
     </>
   );
 };

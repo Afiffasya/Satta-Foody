@@ -46,9 +46,16 @@ const Top = () => {
                 return (
                   <Col xs={12} sm={6} md={6} lg={3} key={r.id}>
                     <Card className="tp" fluid>
-                      <Card.Img variant="top" className="pic" src={r.imageUrl} alt={r.name} />
+                      <Card.Img
+                        variant="top"
+                        className="pic"
+                        src={r.imageUrl}
+                        alt={r.name}
+                      />
                       <Card.Body>
-                        <Card.Title className="text-center">{r.name}</Card.Title>
+                        <Card.Title className="text-center">
+                          {r.name}
+                        </Card.Title>
                         <Link
                           style={{ textDecoration: "none", width: "100%" }}
                           className="btn btn-success"

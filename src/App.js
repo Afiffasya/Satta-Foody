@@ -15,7 +15,7 @@ import Error from './pages/Error/Error'
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
-import FoodList from './pages/AllFood/AllFood';
+import AllFood from './pages/AllFood/AllFood';
 import OurRecipes from './pages/ListFood/ListFood';
 import Detail from './pages/DetailFood/DetailFood';
 import Favorite from './pages/Favorite/Favorite';
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/allfood",
         element: localStorage.getItem("role") === "admin" ? (
-          <FoodList />
+          <AllFood />
         ) : (
           <OurRecipes />
         ),

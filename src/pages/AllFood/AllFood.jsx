@@ -8,7 +8,20 @@ import "tippy.js/dist/tippy.css";
 import "./AllFood.css";
 import ImageForm from "../../components/ImageForm/ImageForm";
 
-const FoodList = () => {
+
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+// import { Link } from "react-router-dom";
+// import { Formik, Form, useField, Field, FieldArray } from "formik";
+// import * as Yup from "yup";
+// import Tippy from "@tippyjs/react";
+// import "tippy.js/dist/tippy.css";
+// import "./AllFood.css";
+// import ImageForm from "../../components/ImageForm/ImageForm";
+// import { Card, Button, Modal, Form, Row, Col } from "react-bootstrap";
+
+
+const AllFood = () => {
   const [food, setFood] = useState();
   const [uploadImage, setUploadImage] = useState("");
 
@@ -153,7 +166,7 @@ const FoodList = () => {
               return (
                 <React.Fragment key={r.id}>
                   <div className="card-group gy-0">
-                    <div className="card mh-100 shadow mt-4 tp">
+                    <div className="card mh-100 mt-4 tp allfood">
                       <img
                         src={r.imageUrl}
                         className="card-img-top mx-auto card-image"
@@ -205,7 +218,7 @@ const FoodList = () => {
                         <Link
                           style={{ textDecoration: "none" }}
                           to={`/detail/${r.id}`}
-                          className="text-success d-flex align-items-center text-card"
+                          className="d-flex align-items-center view"
                         >
                           View Detail
                           <i className="ri-arrow-right-line ms-1"></i>
@@ -339,4 +352,6 @@ const FoodList = () => {
   );
 };
 
-export default FoodList;
+export default AllFood;
+
+

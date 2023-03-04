@@ -1,10 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Asul', sans-serif;
-    font-weight: bold;
-    color: #F3EFE0;
-  }
+  /* .nav {
+    background: transparent #CF0A0A;
+    backdrop-filter: blur(10px);
+  } */
   #navbarSupportContent {
     justify-content: space-between;
   }
@@ -22,14 +19,9 @@
   .nav-link {
     font-size: 25px;
     color: #F3EFE0;
+    font-weight: bold;
+    font-family: 'Asul', sans-serif;
   }
   .nav-link:hover {
-    color: #CF0A0A;
-  }
-  .log {
-    text-decoration: underline 5px;
-    font-size: 25px;
-  }
-  .log:hover {
     color: #CF0A0A;
   }
