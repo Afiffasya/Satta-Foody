@@ -16,7 +16,6 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import AllFood from './pages/AllFood/AllFood';
-import OurRecipes from './pages/ListFood/ListFood';
 import Detail from './pages/DetailFood/DetailFood';
 import Favorite from './pages/Favorite/Favorite';
 import AddFood from './pages/AddFood/AddFood';
@@ -42,11 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/allfood",
-        element: localStorage.getItem("role") === "admin" ? (
-          <AllFood />
-        ) : (
-          <OurRecipes />
-        ),
+        element: <AllFood />
       },{
         path: "/detail/:foodID",
         element: <Detail />,
