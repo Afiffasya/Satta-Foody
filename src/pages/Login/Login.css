@@ -1,9 +1,4 @@
-*, *::after, *::before {
-    box-sizing: border-box;
-}
-body {
-    text-align: center;
-}
+
 .panda {
     position: relative;
     width: 200px;
@@ -199,7 +194,7 @@ body {
     font-family: 'Asul', sans-serif;
     border: 5px solid;
     font-weight: bold;
-    color: #820000;
+    color: #FFBF00;
 }
 form {
     display: none;
@@ -217,18 +212,19 @@ form {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
     font-family: 'Asul', sans-serif;
     top: -50px;
+    text-align: center;
 }
 form.up {
     transform: translateY(-150px);
 }
 .form-control {
-    border: 2px solid #820000;
+    border: 2px solid #FFBF00;
 }
 .btn {
-    background-color: #820000;
+    background-color: #FFBF00;
 }
 .text-successs {
-    color: #820000;
+    color: #FFBF00;
 }
 
 .form-control {
@@ -237,11 +233,16 @@ form.up {
 }
 .inp {
     font-size: 18px;
-    color: #820000;
+    color: #FFBF00;
 }
 
-form p {
+.tx {
     font-size: 20px;
+    color: #FFF;
+}
+
+.nv:hover {
+    color: red;
 }
 
 

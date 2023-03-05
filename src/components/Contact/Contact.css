@@ -1,6 +1,9 @@
 .contact {
   background-color: #222222
   }
+  .tc {
+    font-family: 'Asul', sans-serif;
+  }
   .contact img {
     width: 100%;
   }
@@ -8,7 +11,7 @@
     font-size: 45px;
     font-weight: 700;
     margin-bottom: 30px;
-    color: #CF0A0A;
+    color: #FFBF00;
   }
   .touch {
     display: flex;

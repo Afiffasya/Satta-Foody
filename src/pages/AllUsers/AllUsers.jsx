@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { useField, Formik, Form } from "formik";
 import "./AllUsers.css";
 import defaultImage from "../../assets/img/default.webp";
+import { Card, Container, Row, Col } from "react-bootstrap";
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
@@ -61,8 +62,8 @@ const AllUsers = () => {
   const SelectRole = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
-      <div className="row mb-3">
-        <div className="col-lg-12">
+      <Row className="mb-3">
+        <Col className="col-lg-12">
           <label
             className="form-label fw-bold mb-1"
             htmlFor={props.id || props.name}
@@ -73,56 +74,56 @@ const AllUsers = () => {
           {meta.touched && meta.error ? (
             <div className="text-danger">{meta.error}</div>
           ) : null}
-        </div>
-      </div>
+        </Col>
+      </Row>
     );
   };
 
   return (
     <>
-      <section className="container-fluid py-5 min-vh-100">
+      <Container fluid className="py-5 min-vh-100">
         <h1 className="title text-center">All Users</h1>
-        <div className="row row-cols row-cols-md-3 row-cols-lg-5 g-4 mt-3 mx-lg-5 mx-4">
+        <Row className="row-cols row-cols-md-3 row-cols-lg-5 g-4 mt-3 mx-lg-5 mx-4">
           {users &&
             users.map((r) => {
               return (
                 <React.Fragment key={r.id}>
                   <div className="card-group gy-0">
-                    <div className="card shadow mt-4">
-                      <div className="card-body d-flex flex-column p-2">
+                    <Card className="shadow mt-4 crd">
+                      <Card.Body className="d-flex flex-column p-2">
                         <img
                           src={
                             r.profilePictureUrl
                               ? r.profilePictureUrl
                               : defaultImage
                           }
-                          className="img-card-profile mx-auto mb-2"
+                          className="img-profile-page mx-auto mb-2"
                           alt={r.name}
                           onError={onImageError}
                         />
-                        <h5 className="card-title text-center fs-5 mb-3">
+                        <h5 className="card-title text-center fs-5 mb-3 label-register">
                           {r.name}
                         </h5>
-                        <div className="d-flex gap-2 d-flex align-items-center mt-auto">
+                        <div className="d-flex gap-2 d-flex align-items-center mt-auto label-register">
                           <i className="ri-mail-fill fs-5"></i>
                           <p className="card-text  font-12px text-truncate">
                             {r.email}
                           </p>
                         </div>
-                        <div className="d-flex gap-2 align-items-center">
+                        <div className="d-flex gap-2 align-items-center label-register">
                           <i className="ri-phone-fill fs-5"></i>
                           <p className="card-text  font-12px">
                             {r.phoneNumber}
                           </p>
                         </div>
-                        <div className="d-flex gap-2 align-items-center">
+                        <div className="d-flex gap-2 align-items-center label-register">
                           <i className="ri-account-circle-fill fs-5"></i>
                           <p className="card-text  font-12px">
                             {r.role} account
                           </p>
                         </div>
-                      </div>
-                      <div className="card-footer d-flex align-items-center justify-content-center">
+                      </Card.Body>
+                      <Card.Footer className="d-flex align-items-center justify-content-center">
                         <button
                           type="button"
                           className="btn text-light btn-success shadow d-flex align-items-center py-1"
@@ -131,8 +132,8 @@ const AllUsers = () => {
                         >
                           Edit Role
                         </button>
-                      </div>
-                    </div>
+                      </Card.Footer>
+                    </Card>
                   </div>
 
                   <div
@@ -144,8 +145,8 @@ const AllUsers = () => {
                   >
                     <div className="modal-dialog">
                       <div className="modal-content">
-                        <div className="modal-header">
-                          <h5 className="modal-title">Edit Role</h5>
+                        <div className="modal-header crd">
+                          <h5 className="modal-title allfood">Edit Role</h5>
                           <button
                             type="button"
                             className="btn-close"
@@ -153,7 +154,7 @@ const AllUsers = () => {
                             aria-label="Close"
                           ></button>
                         </div>
-                        <div className="modal-body p-4">
+                        <div className="modal-body p-4 crd">
                           <div className="text-center mb-3">
                             <img
                               src={
@@ -161,11 +162,11 @@ const AllUsers = () => {
                                   ? r.profilePictureUrl
                                   : defaultImage
                               }
-                              className="img-card-profile mx-auto mb-3"
+                              className="img-profile-page mx-auto mb-3"
                               alt={r.name}
                               onError={onImageError}
                             />
-                            <h5 className="card-title text-center fs-5 mb-2">
+                            <h5 className="card-title text-center fs-5 mb-2 label-register">
                               {r.name}
                             </h5>
                             <div className="d-flex gap-2 align-items-center justify-content-center">
@@ -195,7 +196,7 @@ const AllUsers = () => {
                             })}
                             onSubmit={handleSubmit}
                           >
-                            <Form>
+                            <Form className="fomuser">
                               <SelectRole label="Change Role" name="role">
                                 <option value="">Select Role</option>
                                 <option value="admin">Admin</option>
@@ -218,8 +219,8 @@ const AllUsers = () => {
                 </React.Fragment>
               );
             })}
-        </div>
-      </section>
+        </Row>
+      </Container>
     </>
   );
 };

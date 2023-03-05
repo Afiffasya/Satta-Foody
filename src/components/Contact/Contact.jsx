@@ -20,8 +20,8 @@ const Contact = () => {
               }
             </TrackVisibility>
           </Col>
-          <Col className="tc" size={12} md={4}>
-            <h2>Get In Touch</h2>
+          <Col size={12} md={4}>
+            <h2 className="tc">Get In Touch</h2>
               <Row>
                 <Col>
                   <div className="touch">

@@ -35,9 +35,9 @@ const Top = () => {
 
   return (
     <>
-      <Container fluid className="p-home p-responsive">
+      <Container className="p-home p-responsive">
         <h1 className="title text-center">The Most Favorite Food</h1>
-        <Row className="mt-4">
+        <Row className="mt-4 space">
           {food &&
             food
               .sort((a, b) => (a.totalLikes < b.totalLikes ? 1 : -1))
@@ -45,7 +45,7 @@ const Top = () => {
               .map((r) => {
                 return (
                   <Col xs={12} sm={6} md={6} lg={3} key={r.id}>
-                    <Card className="tp" fluid>
+                    <Card className="tp" >
                       <Card.Img
                         variant="top"
                         className="pic"
@@ -58,7 +58,7 @@ const Top = () => {
                         </Card.Title>
                         <Link
                           style={{ textDecoration: "none", width: "100%" }}
-                          className="btn btn-success"
+                          className="btn"
                           to={`/detail/${r.id}`}
                         >
                           Click for Details

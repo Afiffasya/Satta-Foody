@@ -1,16 +1,13 @@
-  /* .nav {
-    background: transparent #CF0A0A;
-    backdrop-filter: blur(10px);
-  } */
+
   #navbarSupportContent {
     justify-content: space-between;
   }
   #togle {
-    background-color: #CF0A0A;
+    background-color: #FFBF00;
   }
   .logo {
     font-family: 'Rubik Vinyl', cursive;
-    color: #CF0A0A;
+    color: #FFBF00;
     font-size: 50px;
     font-weight: bold;
   }
@@ -23,5 +20,12 @@
     font-family: 'Asul', sans-serif;
   }
   .nav-link:hover {
-    color: #CF0A0A;
+    color: #FFBF00;
   }
+  .link .nav-link:active,
+.link .nav-link:visited {
+  color: #F3EFE0;
+}
+.link .nav-link:focus {
+  color: #FFBF00;
+}

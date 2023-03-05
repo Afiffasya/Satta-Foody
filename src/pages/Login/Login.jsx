@@ -145,9 +145,12 @@ const Login = () => {
           />
         </div>
         <p className="fw-bold text-center tx">
-          Not Registered Yet?
+          Not Registered Yet ?
           <span className="ms-1">
-            <Link className="text-decoration-none text-successs" to="/register">
+            <Link
+              className="text-decoration-none text-successs nv"
+              to="/register"
+            >
               Create an Account
             </Link>
           </span>

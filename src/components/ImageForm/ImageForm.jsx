@@ -38,7 +38,7 @@ const ImageForm = ({ onChange }) => {
   return (
     <>
       <Form.Group className="mb-3">
-        <Form.Label className="fw-bold mb-1">Image</Form.Label>
+        <Form.Label className="fw-bold mb-1 label-register">Image</Form.Label>
         <div className="d-flex">
           <Form.Control
             type="file"

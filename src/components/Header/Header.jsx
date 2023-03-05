@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../Header/Header.css";
 
 const Header = () => {
   // eslint-disable-next-line
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [username, setUserName] = useState();
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -24,6 +25,17 @@ const Header = () => {
           console.log(error);
         });
     }
+
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleLogout = () => {
@@ -46,13 +58,18 @@ const Header = () => {
         console.log(error);
       });
   };
+
+  const navbarBackground = {
+    backgroundColor: scrollPosition > 0 ? "#222222" : "transparent",
+    transition: "background-color 0.3s ease-in-out",
+  };
   return (
     <>
-      <Navbar className="nav" expand="lg" sticky="top">
-        <div className="container-fluid px-lg-5">
+      <Navbar className="nav" expand="lg" sticky="top" style={navbarBackground}>
+        <Container fluid className="px-lg-5">
           <Navbar.Toggle aria-controls="navbarSupportContent" id="togle" />
           <Navbar.Collapse id="navbarSupportContent">
-            <Nav className="link">
+            <Nav className="link" variant="tabs" defaultActiveKey="/">
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
@@ -96,13 +113,10 @@ const Header = () => {
               )}
             </Nav>
           </Navbar.Collapse>
-        </div>
+        </Container>
       </Navbar>
     </>
   );
 };
 
 export default Header;
-
-
-

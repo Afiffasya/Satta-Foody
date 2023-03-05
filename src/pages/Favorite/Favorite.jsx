@@ -209,7 +209,7 @@ const Favorite = () => {
           {favorite &&
             favorite.map((r) => {
               return (
-                <Col key={r.id}>
+                <Col xs={12} sm={6} md={6} lg={3} key={r.id}>
                   <Card className="h-100 tp">
                     <Card.Img
                       variant="top"
@@ -228,7 +228,7 @@ const Favorite = () => {
                         </span>
                         <Button
                           variant="link"
-                          className="text-muted d-flex align-items-center rate"
+                          className="text-muted d-flex align-items-center text-decoration-none rate"
                           onClick={() => handleLike(r.id, r.isLike)}
                         >
                           <i

@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import "../Profile/Profile.css";
 import ImageForm from "../../components/ImageForm/ImageForm";
 import defaultImage from "../../assets/img/default.webp";
-import { Button, Card, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 
 const Profile = () => {
   const [profile, setProfile] = useState();
@@ -66,10 +66,10 @@ const Profile = () => {
   };
   const formik = useFormik({
     initialValues: {
-      name: profile ? profile.name : '',
-      email: profile ? profile.email : '',
-      phoneNumber: profile ? profile.phoneNumber : '',
-      profilePictureUrl: profile ? profile.profilePictureUrl : ''
+      name: profile ? profile.name : "",
+      email: profile ? profile.email : "",
+      phoneNumber: profile ? profile.phoneNumber : "",
+      profilePictureUrl: profile ? profile.profilePictureUrl : "",
     },
     enableReinitialize: true,
     validationSchema: Yup.object({
@@ -80,44 +80,44 @@ const Profile = () => {
         .required("Required"),
     }),
   });
-  
 
   return (
     <>
       <Container fluid className="py-5">
         <div className="mx-auto profile-detail">
           <h1 className="title text-center">My Profile</h1>
-          <Card className="my-3">
-            <Card.Body className="card-body">
+          <Card className="my-3 crd">
+            <Card.Body>
               <Row className="g-2">
                 <Card.Img
-                  
-                    src={profile && profile.profilePictureUrl ? profile && profile.profilePictureUrl : defaultImage}
-                    className="img-fluid m-0 img-profile-page col-lg-4 col-md-4 col-sm-4 d-flex justify-content-center"
-                    alt={profile && profile.name}
-                    onError={onImageError}
-                  />
-                <div className="col-lg-8 col-md-8 col-sm-8">
-                  <Card.Title className="text-center text-sm-start fs-4 mb-3">
+                  src={
+                    profile && profile.profilePictureUrl
+                      ? profile && profile.profilePictureUrl
+                      : defaultImage
+                  }
+                  className="img-fluid m-0 img-profile-page col-lg-4 col-md-4 col-sm-4 d-flex justify-content-center"
+                  alt={profile && profile.name}
+                  onError={onImageError}
+                />
+                <Col className="col-lg-8 col-md-8 col-sm-8">
+                  <Card.Title className="text-center text-sm-start fs-4 mb-3 label-register">
                     {profile && profile.name}
                   </Card.Title>
-                  <div className="d-flex gap-2 mb-1 d-flex align-items-center">
+                  <div className="d-flex gap-2 mb-1 d-flex align-items-center label-register">
                     <i className="ri-mail-fill fs-5"></i>
                     <Card.Text>{profile && profile.email}</Card.Text>
                   </div>
-                  <div className="d-flex gap-2 mb-1 align-items-center">
+                  <div className="d-flex gap-2 mb-1 align-items-center label-register">
                     <i className="ri-phone-fill fs-5"></i>
-                    <Card.Text>
-                      {profile && profile.phoneNumber}
-                    </Card.Text>
+                    <Card.Text>{profile && profile.phoneNumber}</Card.Text>
                   </div>
-                  <div className="d-flex gap-2 mb-1 align-items-center">
+                  <div className="d-flex gap-2 mb-1 align-items-center label-register">
                     <i className="ri-account-circle-fill fs-5"></i>
                     <Card.Text className="text-capitalize">
                       {profile && profile.role} account
                     </Card.Text>
                   </div>
-                </div>
+                </Col>
               </Row>
             </Card.Body>
             <Card.Footer>
@@ -143,8 +143,8 @@ const Profile = () => {
           >
             <div className="modal-dialog">
               <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title">Edit Profile</h5>
+                <div className="modal-header crd">
+                  <h5 className="modal-title allfood">Edit Profile</h5>
                   <button
                     type="button"
                     className="btn-close"
@@ -152,7 +152,7 @@ const Profile = () => {
                     aria-label="Close"
                   ></button>
                 </div>
-                <div className="modal-body p-4">
+                <div className="modal-body p-4 crd">
                   <div className="text-center">
                     <img
                       src={
@@ -170,7 +170,7 @@ const Profile = () => {
                       <div className="col-lg-12">
                         <label
                           htmlFor="inputName"
-                          className="form-label fw-bold mb-1"
+                          className="form-label fw-bold mb-1 label-register"
                         >
                           Username
                         </label>
@@ -193,7 +193,7 @@ const Profile = () => {
                       <div className="col-lg-12">
                         <label
                           htmlFor="inputEmail"
-                          className="form-label fw-bold mb-1"
+                          className="form-label fw-bold mb-1 label-register"
                         >
                           Email
                         </label>
@@ -216,7 +216,7 @@ const Profile = () => {
                       <div className="col-lg-12">
                         <label
                           htmlFor="inputPhoneNumber"
-                          className="form-label fw-bold mb-1"
+                          className="form-label fw-bold mb-1 label-register"
                         >
                           Phone Number
                         </label>

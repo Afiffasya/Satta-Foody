@@ -7,19 +7,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "./AllFood.css";
 import ImageForm from "../../components/ImageForm/ImageForm";
-
-
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
-// import { Formik, Form, useField, Field, FieldArray } from "formik";
-// import * as Yup from "yup";
-// import Tippy from "@tippyjs/react";
-// import "tippy.js/dist/tippy.css";
-// import "./AllFood.css";
-// import ImageForm from "../../components/ImageForm/ImageForm";
-// import { Card, Button, Modal, Form, Row, Col } from "react-bootstrap";
-
+import { Card, Col, Container, Row } from "react-bootstrap";
 
 const AllFood = () => {
   const [food, setFood] = useState();
@@ -139,10 +127,10 @@ const AllFood = () => {
   const InputText = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     return (
-      <div className="row mb-3">
-        <div className="col-lg-12">
+      <Row className="mb-3">
+        <Col className="col-lg-12">
           <label
-            className="form-label fw-bold mb-1"
+            className="form-label fw-bold mb-1 label-register"
             htmlFor={props.id || props.name}
           >
             {label}
@@ -151,49 +139,54 @@ const AllFood = () => {
           {meta.touched && meta.error ? (
             <div className="text-danger">{meta.error}</div>
           ) : null}
-        </div>
-      </div>
+        </Col>
+      </Row>
     );
   };
 
   return (
     <>
-      <section className="container-fluid py-5 min-vh-100">
+      <Container fluid className="py-5 min-vh-100">
         <h1 className="title text-center">All Food</h1>
-        <div className="row row-cols row-cols-md-3 row-cols-lg-5 g-4 mt-3 mx-lg-5 mx-4">
+        <Row className="row-cols row-cols-md-3 row-cols-lg-5 g-4 mt-3 mx-lg-5 mx-4">
           {food &&
             food.map((r) => {
               return (
                 <React.Fragment key={r.id}>
                   <div className="card-group gy-0">
-                    <div className="card mh-100 mt-4 tp allfood">
+                    <Card className="mh-100 mt-4 tp allfood">
                       <img
                         src={r.imageUrl}
                         className="card-img-top mx-auto card-image"
                         alt={r.name}
                       />
+
                       <div className="d-flex justify-content-center my-2 gap-2">
-                        <Tippy content="Edit this food">
-                          <button
-                            type="button"
-                            className="btn btn-success text-light d-flex align-items-center justify-content-center fs-6 btn-edit-delete p-1"
-                            data-bs-toggle="modal"
-                            data-bs-target={`#staticBackdrop_${r.id}`}
-                          >
-                            <i className="ri-pencil-fill"></i>
-                          </button>
-                        </Tippy>
-                        <Tippy content="Delete this food">
-                          <button
-                            type="button"
-                            className="btn btn-danger text-light d-flex align-items-center justify-content-center fs-6 btn-edit-delete p-1"
-                            onClick={() => deleteFood(r.id)}
-                          >
-                            <i className="ri-delete-bin-fill"></i>
-                          </button>
-                        </Tippy>
+                        {localStorage.getItem("role") === "admin" && (
+                          <Tippy content="Edit this food">
+                            <button
+                              type="button"
+                              className="btn btn-success text-light d-flex align-items-center justify-content-center fs-6 btn-edit-delete p-1"
+                              data-bs-toggle="modal"
+                              data-bs-target={`#staticBackdrop_${r.id}`}
+                            >
+                              <i className="ri-pencil-fill"></i>
+                            </button>
+                          </Tippy>
+                        )}
+                        {localStorage.getItem("role") === "admin" && (
+                          <Tippy content="Delete this food">
+                            <button
+                              type="button"
+                              className="btn btn-danger text-light d-flex align-items-center justify-content-center fs-6 btn-edit-delete p-1"
+                              onClick={() => deleteFood(r.id)}
+                            >
+                              <i className="ri-delete-bin-fill"></i>
+                            </button>
+                          </Tippy>
+                        )}
                       </div>
-                      <div className="card-body d-flex flex-column p-2">
+                      <Card.Body className="d-flex flex-column p-2">
                         <h5 className="card-title text-start text-capitalize fs-6 mb-1">
                           {r.name}
                         </h5>
@@ -213,8 +206,8 @@ const AllFood = () => {
                             {r.totalLikes}
                           </span>
                         </div>
-                      </div>
-                      <div className="card-footer d-flex align-items-center justify-content-end">
+                      </Card.Body>
+                      <Card.Footer className="d-flex align-items-center justify-content-end">
                         <Link
                           style={{ textDecoration: "none" }}
                           to={`/detail/${r.id}`}
@@ -223,8 +216,8 @@ const AllFood = () => {
                           View Detail
                           <i className="ri-arrow-right-line ms-1"></i>
                         </Link>
-                      </div>
-                    </div>
+                      </Card.Footer>
+                    </Card>
                   </div>
                   <div
                     className="modal fade"
@@ -235,8 +228,10 @@ const AllFood = () => {
                   >
                     <div className="modal-dialog">
                       <div className="modal-content">
-                        <div className="modal-header">
-                          <h5 className="modal-title">Update {r.name}</h5>
+                        <div className="modal-header crd">
+                          <h5 className="modal-title allfood">
+                            Update {r.name}
+                          </h5>
                           <button
                             type="button"
                             className="btn-close"
@@ -244,7 +239,7 @@ const AllFood = () => {
                             aria-label="Close"
                           ></button>
                         </div>
-                        <div className="modal-body p-4">
+                        <div className="modal-body p-4 crd">
                           <Formik
                             initialValues={{
                               name: r.name,
@@ -276,9 +271,9 @@ const AllFood = () => {
                                 onChange={(value) => setUploadImage(value)}
                               />
 
-                              <div className="row mb-3">
-                                <div className="col-lg-12">
-                                  <label className="form-label fw-bold mb-1">
+                              <Row className="mb-3">
+                                <Col className="col-lg-12">
+                                  <label className="form-label fw-bold mb-1 label-register">
                                     Ingredients
                                   </label>
                                   <FieldArray name="ingredients">
@@ -305,7 +300,7 @@ const AllFood = () => {
                                                 {index > 0 && (
                                                   <button
                                                     type="button"
-                                                    className="btn btn-danger "
+                                                    className="btn bs"
                                                     onClick={() =>
                                                       remove(index)
                                                     }
@@ -315,7 +310,7 @@ const AllFood = () => {
                                                 )}
                                                 <button
                                                   type="button"
-                                                  className="btn btn-success "
+                                                  className="btn bs"
                                                   onClick={() => push("")}
                                                 >
                                                   <i className="ri-add-fill"></i>
@@ -327,13 +322,10 @@ const AllFood = () => {
                                       );
                                     }}
                                   </FieldArray>
-                                </div>
-                              </div>
+                                </Col>
+                              </Row>
                               <div className="text-center mt-3">
-                                <button
-                                  type="submit"
-                                  className="btn btn-success"
-                                >
+                                <button type="submit" className="btn">
                                   Save Change
                                 </button>
                               </div>
@@ -346,12 +338,10 @@ const AllFood = () => {
                 </React.Fragment>
               );
             })}
-        </div>
-      </section>
+        </Row>
+      </Container>
     </>
   );
 };
 
 export default AllFood;
-
-

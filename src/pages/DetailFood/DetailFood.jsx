@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import ReactStars from "react-stars";
 import "./DetailFood.css";
 import defaultImage from "../../assets/img/default.webp";
+import { Card, Col, Container, Form, Row } from "react-bootstrap";
 
 const Detail = () => {
   let { foodID } = useParams();
@@ -94,22 +95,22 @@ const Detail = () => {
 
   return (
     <>
-      <section className="container-fluid py-5">
+      <Container fluid className="py-5">
         <div className="mx-auto food-detail">
-          <h1 className="title text-center text-capitalize">
+          <h1 className="titlee text-center text-capitalize">
             {food && food.name} details
           </h1>
-          <div className="card my-3 shadow">
-            <div className="card-body tx">
-              <div className="row g-2">
-                <div className="col-lg-4 col-md-4 col-sm-4">
+          <Card className="my-3 shadow det">
+            <Card.Body className="tx">
+              <Row className="g-2">
+                <Col className="col-lg-4 col-md-4 col-sm-4">
                   <img
                     src={food && food.imageUrl}
                     className="img-fluid m-0 img-food"
                     alt={food && food.name}
                   />
-                </div>
-                <div className="col-lg-8 col-md-8 col-sm-8">
+                </Col>
+                <Col className="col-lg-8 col-md-8 col-sm-8">
                   <h2 className="card-title text-center text-sm-start text-capitalize fs-4 mb-3">
                     {food && food.name}
                   </h2>
@@ -146,10 +147,10 @@ const Detail = () => {
                       {food && food.updatedAt}
                     </p>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="card-footer ">
+                </Col>
+              </Row>
+            </Card.Body>
+            <Card.Footer>
               <div className="d-flex align-items-center mt-auto">
                 <span className="text-muted d-flex align-items-center me-3 rate">
                   <ReactStars
@@ -165,8 +166,8 @@ const Detail = () => {
                   {food && food.totalLikes}
                 </span>
               </div>
-            </div>
-          </div>
+            </Card.Footer>
+          </Card>
 
           {localStorage.getItem("token") ? (
             <>
@@ -181,9 +182,8 @@ const Detail = () => {
                   Rate this this
                 </button>
               </div>
-
               <div
-                className="modal fade"
+                className="modal fade crd"
                 id={`rating${food && food.id}`}
                 tabIndex="-1"
                 aria-labelledby="modal-title"
@@ -208,15 +208,15 @@ const Detail = () => {
                           alt={food && food.name}
                         />
                       </div>
-                      <form onSubmit={(e) => handleSubmit(e, food.id)}>
-                        <div className="row mb-3">
-                          <div className="col-lg-12 text-center">
-                            <label
+                      <Form onSubmit={(e) => handleSubmit(e, food.id)}>
+                        <Row className="mb-3">
+                          <Col className="col-lg-12 text-center">
+                            <Form.Label
                               htmlFor="inputName"
                               className="form-label fw-bold mb-1"
                             >
                               Rating
-                            </label>
+                            </Form.Label>
                             <ReactStars
                                 name="rating"
                                 value={formik.values.rating}
@@ -227,16 +227,16 @@ const Detail = () => {
                                 size={50}
                                 className="d-flex justify-content-center"
                               />
-                          </div>
-                        </div>
-                        <div className="row mb-3">
-                          <div className="col-lg-12">
-                            <label
+                          </Col>
+                        </Row>
+                        <Row className="mb-3">
+                          <Col className="col-lg-12">
+                            <Form.Label
                               htmlFor="inputName"
                               className="form-label fw-bold mb-1"
                             >
                               Review
-                            </label>
+                            </Form.Label>
                             <textarea
                               value={formik.values.review}
                               onChange={formik.handleChange}
@@ -246,13 +246,13 @@ const Detail = () => {
                               id="review"
                               placeholder="What's your review"
                             />
-                          </div>
+                          </Col>
                           {formik.touched.review && formik.errors.review ? (
                             <div className="text-danger">
                               {formik.errors.review}
                             </div>
                           ) : null}
-                        </div>
+                        </Row>
                         <div className="text-start mt-3">
                           <button
                             type="submit"
@@ -261,7 +261,7 @@ const Detail = () => {
                             Submit
                           </button>
                         </div>
-                      </form>
+                      </Form>
                     </div>
                   </div>
                 </div>
@@ -318,7 +318,7 @@ const Detail = () => {
               );
             })}
         </div>
-      </section>
+      </Container>
     </>
   );
 };

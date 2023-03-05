@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 import ImageForm from "../../components/ImageForm/ImageForm";
 import "../Register/Register.css";
+import { Card, Col, Container, Form, Row } from "react-bootstrap";
 
 const Register = () => {
   const [uploadImage, setUploadImage] = useState("");
@@ -70,16 +71,16 @@ const Register = () => {
 
   return (
     <>
-      <section className="container-fluid background-sign-up d-flex align-items-center py-5">
-        <div className="card mx-auto shadow sign-up-card py-3 px-2">
-          <div className="card-body">
+      <Container fluid className="background-sign-up d-flex align-items-center py-5">
+        <Card className="mx-auto shadow py-3 px-2 crd">
+          <Card.Body>
             <h2 className="txt text-center mb-4">Sign Up</h2>
-            <form className="fom" onSubmit={formSignup.handleSubmit}>
-              <div className="row mb-2">
-                <div className="col-6">
-                  <label className="form-label fw-bold mb-0 label-register">
+            <Form className="fom" onSubmit={formSignup.handleSubmit}>
+              <Row className="mb-2">
+                <Col className="col-6">
+                  <Form.Label className="fw-bold mb-0 label-register">
                     Username
-                  </label>
+                  </Form.Label>
                   <input
                     id="name"
                     name="name"
@@ -93,11 +94,11 @@ const Register = () => {
                   {formSignup.touched.name && formSignup.errors.name ? (
                     <div className="text-danger">{formSignup.errors.name}</div>
                   ) : null}
-                </div>
-                <div className="col-6">
-                  <label className="form-label fw-bold mb-0 label-register">
+                </Col>
+                <Col className="col-6">
+                  <Form.Label className="fw-bold mb-0 label-register">
                     Email
-                  </label>
+                  </Form.Label>
                   <input
                     id="email"
                     name="email"
@@ -112,14 +113,14 @@ const Register = () => {
                   {formSignup.touched.email && formSignup.errors.email ? (
                     <div className="text-danger">{formSignup.errors.email}</div>
                   ) : null}
-                </div>
-              </div>
+                </Col>
+              </Row>
 
-              <div className="row mb-2">
-                <div className="col-6">
-                  <label className="form-label fw-bold mb-0 label-register">
+              <Row className="mb-2">
+                <Col className="col-6">
+                  <Form.Label className="form-label fw-bold mb-0 label-register">
                     Password
-                  </label>
+                  </Form.Label>
                   <input
                     id="password"
                     name="password"
@@ -136,11 +137,11 @@ const Register = () => {
                       {formSignup.errors.password}
                     </div>
                   ) : null}
-                </div>
-                <div className="col-6">
-                  <label className="form-label fw-bold mb-0 label-register">
+                </Col>
+                <Col className="col-6">
+                  <Form.Label className="form-label fw-bold mb-0 label-register">
                     Confirm Password
-                  </label>
+                  </Form.Label>
                   <input
                     id="passwordRepeat"
                     name="passwordRepeat"
@@ -158,14 +159,13 @@ const Register = () => {
                       {formSignup.errors.passwordRepeat}
                     </div>
                   ) : null}
-                </div>
-              </div>
-
-              <div className="row mb-2">
-                <div className="col-6">
-                  <label className="form-label fw-bold mb-0 label-register">
+                </Col>
+              </Row>
+              <Row className="mb-2">
+                <Col className="col-6">
+                  <Form.Label className="form-label fw-bold mb-0 label-register">
                     Phone
-                  </label>
+                  </Form.Label>
                   <input
                     id="phoneNumber"
                     name="phoneNumber"
@@ -183,11 +183,11 @@ const Register = () => {
                       {formSignup.errors.phoneNumber}
                     </div>
                   ) : null}
-                </div>
-                <div className="col-6">
-                  <label className="form-label fw-bold mb-0 label-register">
+                </Col>
+                <Col className="col-6">
+                  <Form.Label className="form-label fw-bold mb-0 label-register">
                     Select Role
-                  </label>
+                  </Form.Label>
                   <select
                     onChange={formSignup.handleChange}
                     onBlur={formSignup.handleBlur}
@@ -202,31 +202,31 @@ const Register = () => {
                     <option value="admin">Admin</option>
                     <option value="user">User</option>
                   </select>
-                </div>
-              </div>
+                </Col>
+              </Row>
               <ImageForm onChange={(value) => setUploadImage(value)} />
               <div className="mt-3">
                 <input
                   type="submit"
                   value="Register"
-                  className="btn btn-success fs-12px"
+                  className="btn fs-12px"
                 />
               </div>
               <p className="fw-bold text-center tx">
-                Already have an account?
+                Already have an account ?
                 <span className="ms-1">
                   <Link
-                    className="text-decoration-none tex"
+                    className="text-decoration-none tex nv"
                     to="/login"
                   >
                     back to login
                   </Link>
                 </span>
               </p>
-            </form>
-          </div>
-        </div>
-      </section>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Container>
     </>
   );
 };

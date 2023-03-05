@@ -1,15 +1,7 @@
 
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
   .home {
     padding: 50px;
     margin-top: 10vh;
-  }
-  .title {
-    font-weight: bold;
   }
   .img-about {
     max-height: 500px;
