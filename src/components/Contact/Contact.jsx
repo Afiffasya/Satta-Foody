@@ -20,9 +20,8 @@ const Contact = () => {
               }
             </TrackVisibility>
           </Col>
-          <Col size={12} md={4}>
+          <Col size={6} md={4}>
             <h2 className="tc">Get In Touch</h2>
-              <Row>
                 <Col>
                   <div className="touch">
                     <a href="https://www.linkedin.com/in/afiffasya/"><img src={linkedin} target="_blank" title="linkedin" alt="" /></a>
@@ -45,7 +44,6 @@ const Contact = () => {
                     <p>Email</p>
                   </div>
                 </Col>
-              </Row>
           </Col>
         </Row>
       </Container>

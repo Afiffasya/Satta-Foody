@@ -299,13 +299,13 @@ const Detail = () => {
                             <p className="fw-bold review-name mb-1">
                               {rate.user.name}
                             </p>
-                            <p className="d-flex align-items-center review-name">
+                            <div className="d-flex align-items-center review-name">
                               <ReactStars
                                 value={rate.rating}
                                 edit={false}
                                 size={18}
                               />
-                            </p>
+                            </div>
                           </div>
                         </div>
                       </div>

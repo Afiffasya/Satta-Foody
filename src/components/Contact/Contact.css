@@ -1,6 +1,6 @@
-.contact {
+/* .contact {
   background-color: #222222
-  }
+  } */
   .tc {
     font-family: 'Asul', sans-serif;
   }
@@ -12,6 +12,9 @@
     font-weight: 700;
     margin-bottom: 30px;
     color: #FFBF00;
+    justify-content: left;
+    align-items: left;
+    text-align: left;
   }
   .touch {
     display: flex;
@@ -22,7 +25,6 @@
     height: 42px;
     margin-bottom: 13px;
     margin-right: 10px;
-    margin-left: 80px;
     display: flex;
     border-radius: 50%;
     align-items: center;
