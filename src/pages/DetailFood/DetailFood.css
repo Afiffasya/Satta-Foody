@@ -2,18 +2,8 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)), 
     url("https://watermark.lovepik.com/photo/40015/3536.jpg_wh1200.jpg");
   }
-  .img-food {
-    height: 180px;
-    width: 180px;
-    object-fit: cover;
-  }
-  
-  .img-food-rate {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #376822;
+  .rateimg {
+    margin-top: -22px;
   }
   
   .food-detail, .list-review, .text-review {
@@ -60,7 +50,6 @@
   .rate {
     font-size: 14px;
   }
-  
   @media (max-width: 576px) {
     .img-food {
       height: 350px;

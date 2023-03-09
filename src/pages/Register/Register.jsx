@@ -71,7 +71,10 @@ const Register = () => {
 
   return (
     <>
-      <Container fluid className="background-sign-up d-flex align-items-center py-5">
+      <Container
+        fluid
+        className="background-sign-up d-flex align-items-center py-5"
+      >
         <Card className="mx-auto shadow py-3 px-2 crd">
           <Card.Body>
             <h2 className="txt text-center mb-4">Sign Up</h2>
@@ -206,19 +209,12 @@ const Register = () => {
               </Row>
               <ImageForm onChange={(value) => setUploadImage(value)} />
               <div className="mt-3">
-                <input
-                  type="submit"
-                  value="Register"
-                  className="btn fs-12px"
-                />
+                <input type="submit" value="Register" className="btn fs-12px" />
               </div>
               <p className="fw-bold text-center tx">
                 Already have an account ?
                 <span className="ms-1">
-                  <Link
-                    className="text-decoration-none tex nv"
-                    to="/login"
-                  >
+                  <Link className="text-decoration-none tex nv" to="/login">
                     back to login
                   </Link>
                 </span>

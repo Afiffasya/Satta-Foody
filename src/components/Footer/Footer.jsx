@@ -11,7 +11,7 @@ const Footer = () => {
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
             <p>
-              &copy; All Rights Reserved. Made By 
+              &copy; All Rights Reserved. Made By
               <span className="copy"> Satta Family</span>
             </p>
           </Col>

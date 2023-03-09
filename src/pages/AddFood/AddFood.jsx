@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, useField, Field, FieldArray } from "formik";
 import * as Yup from "yup";
@@ -27,7 +27,7 @@ const AddFood = () => {
       .then((response) => {
         console.log(response.data.data);
         alert("Food Successfully Created!");
-        window.location.href = "/our-recipes";
+        window.location.href = "/allfood";
       })
       .catch((error) => {
         console.log(error);
@@ -145,6 +145,6 @@ const AddFood = () => {
       </Container>
     </>
   );
-}
+};
 
 export default AddFood;

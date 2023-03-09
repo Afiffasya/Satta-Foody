@@ -17,7 +17,7 @@ const Detail = () => {
   const onImageError = (e) => {
     e.target.src = defaultImage;
   };
-  
+
   useEffect(() => {
     axios({
       method: "get",
@@ -88,7 +88,10 @@ const Detail = () => {
       review: "",
     },
     validationSchema: Yup.object({
-      rating: Yup.number().required("Please enter a rating").min(1, "Rating should be at least 1").max(5, "Rating should not exceed 5"),
+      rating: Yup.number()
+        .required("Please enter a rating")
+        .min(1, "Rating should be at least 1")
+        .max(5, "Rating should not exceed 5"),
       review: Yup.string().required("Required"),
     }),
   });
@@ -183,15 +186,15 @@ const Detail = () => {
                 </button>
               </div>
               <div
-                className="modal fade crd"
+                className="modal fade"
                 id={`rating${food && food.id}`}
                 tabIndex="-1"
-                aria-labelledby="modal-title"
+                aria-labelledby="modal-title crd"
                 aria-hidden="true"
               >
                 <div className="modal-dialog">
                   <div className="modal-content">
-                    <div className="modal-header">
+                    <div className="modal-header crd">
                       <h5 className="modal-title">Rate This Food</h5>
                       <button
                         type="button"
@@ -200,11 +203,11 @@ const Detail = () => {
                         aria-label="Close"
                       ></button>
                     </div>
-                    <div className="modal-body p-4">
+                    <div className="modal-body p-4 crd">
                       <div className="text-center">
                         <img
                           src={food && food.imageUrl}
-                          className="img-fluid img-food-rate mb-3"
+                          className="img-fluid mb-3 img-profile-page rateimg"
                           alt={food && food.name}
                         />
                       </div>
@@ -218,22 +221,22 @@ const Detail = () => {
                               Rating
                             </Form.Label>
                             <ReactStars
-                                name="rating"
-                                value={formik.values.rating}
-                                onChange={(value) => {
-                                  formik.setFieldValue("rating", value);
-                                }}
-                                count={5}
-                                size={50}
-                                className="d-flex justify-content-center"
-                              />
+                              name="rating"
+                              value={formik.values.rating}
+                              onChange={(value) => {
+                                formik.setFieldValue("rating", value);
+                              }}
+                              count={5}
+                              size={50}
+                              className="d-flex justify-content-center"
+                            />
                           </Col>
                         </Row>
                         <Row className="mb-3">
                           <Col className="col-lg-12">
                             <Form.Label
                               htmlFor="inputName"
-                              className="form-label fw-bold mb-1"
+                              className="form-label fw-bold mb-1 label-register"
                             >
                               Review
                             </Form.Label>
@@ -280,7 +283,7 @@ const Detail = () => {
               return (
                 <div key={rate.id}>
                   <ul className="list-group mt-3">
-                    <li className="list-group-item shadow">
+                    <li className="list-group-item crd">
                       <div className="d-flex justify-content-start gap-2">
                         <div className="d-flex">
                           <img
@@ -296,7 +299,7 @@ const Detail = () => {
                         </div>
                         <div className="d-flex">
                           <div>
-                            <p className="fw-bold review-name mb-1">
+                            <p className="fw-bold review-name mb-1 label-register">
                               {rate.user.name}
                             </p>
                             <div className="d-flex align-items-center review-name">
@@ -309,7 +312,7 @@ const Detail = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="d-flex justify-content-start review-comment">
+                      <div className="d-flex justify-content-start review-comment label-register">
                         <p>{rate.review}</p>
                       </div>
                     </li>

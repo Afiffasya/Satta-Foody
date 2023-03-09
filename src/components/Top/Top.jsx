@@ -45,7 +45,7 @@ const Top = () => {
               .map((r) => {
                 return (
                   <Col xs={12} sm={6} md={6} lg={3} key={r.id}>
-                    <Card className="tp" >
+                    <Card className="tp">
                       <Card.Img
                         variant="top"
                         className="pic"

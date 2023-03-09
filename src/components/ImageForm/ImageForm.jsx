@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Form, Button } from 'react-bootstrap';
-import './ImageForm.css';
+import React, { useState } from "react";
+import axios from "axios";
+import { Form, Button } from "react-bootstrap";
+import "./ImageForm.css";
 
 const ImageForm = ({ onChange }) => {
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState("");
 
   const handleChange = (e) => {
     setImage(e.target.files[0]);
@@ -13,12 +13,12 @@ const ImageForm = ({ onChange }) => {
   const handleApi = () => {
     const url = `${process.env.REACT_APP_BASEURL}/api/v1/upload-image`;
     const formData = new FormData();
-    formData.append('image', image);
+    formData.append("image", image);
     const headersApi = {
       headers: {
         apiKey: `${process.env.REACT_APP_APIKEY}`,
-        Authorization: `Bearer${localStorage.getItem('token')}`,
-        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer${localStorage.getItem("token")}`,
+        "Content-Type": "multipart/form-data",
       },
     };
 
@@ -31,7 +31,7 @@ const ImageForm = ({ onChange }) => {
       })
       .catch((error) => {
         console.log(error);
-        alert('Image file size too large!');
+        alert("Image file size too large!");
       });
   };
 
