@@ -29,3 +29,10 @@
 .link .nav-link:focus {
   color: #FFBF00;
 }
+.dropdown-menu.show {
+  background-color: #222222;
+  left: -60%;
+}
+.dropdown-item {
+  color: #FFBF00;
+}

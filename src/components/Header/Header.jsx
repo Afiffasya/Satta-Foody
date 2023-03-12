@@ -92,7 +92,7 @@ const Header = () => {
             </Navbar.Brand>
             <Nav className="link">
               {localStorage.getItem("token") ? (
-                <NavDropdown title={username} id="basic-nav-dropdown">
+                <NavDropdown title={username} id="basic-nav-dropdown drp">
                   <NavDropdown.Item as={Link} to={`/profile`}>
                     My Profile
                   </NavDropdown.Item>

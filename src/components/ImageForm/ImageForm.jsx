@@ -31,7 +31,6 @@ const ImageForm = ({ onChange }) => {
       })
       .catch((error) => {
         console.log(error);
-        alert("Image file size too large!");
       });
   };
 

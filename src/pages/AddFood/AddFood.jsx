@@ -112,7 +112,7 @@ const AddFood = () => {
                                 {index > 0 && (
                                   <button
                                     type="button"
-                                    className="btn btn-danger "
+                                    className="btn btn-success"
                                     onClick={() => remove(index)}
                                   >
                                     <i className="ri-delete-bin-line"></i>
@@ -120,7 +120,7 @@ const AddFood = () => {
                                 )}
                                 <button
                                   type="button"
-                                  className="btn btn-success "
+                                  className="btn btn-success btnnn"
                                   onClick={() => push("")}
                                 >
                                   <i className="ri-add-fill"></i>
