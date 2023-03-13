@@ -22,7 +22,6 @@ const Header = () => {
           setUserName(response.data.user.name);
         })
         .catch((error) => {
-          console.log(error);
         });
     }
 
